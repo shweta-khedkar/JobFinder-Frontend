@@ -1,5 +1,5 @@
 import axios from "axios";
-const backendUrl = import.meta.env.BACKEND_URL;
+const backendUrl = "https://jobfiner-backend.onrender.com/api/v1";
 
 export const registerUser = async ({ name, email, mobile, password }) => {
   try {

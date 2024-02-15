@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css';
+
 import { validateUserFromToken } from './APIs/AuthApi';
 import { Outlet } from "react-router-dom"
 import { useEffect, useState } from "react"
@@ -40,7 +40,7 @@ const App = () => {
     !loading ? 
     <UserProvider value={{user, login, logout}}>
       <Outlet/> 
-    </UserProvider> : <h1 className="center">Loading...</h1>
+    </UserProvider> : <h1 className="center">Wait A Minute...Loading</h1>
   )
 }
 

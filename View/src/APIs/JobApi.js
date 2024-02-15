@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const backendUrl = import.meta.env.BACKEND_URL;
+const backendUrl = "https://jobfiner-backend.onrender.com/api/v1";
 
 export const getJobsByFilter = async ({ title, skills }) => {
   const params = {
@@ -42,7 +42,7 @@ export const createJobPost = async (jobData) => {
 
   try {
     const response = await axios.post(
-      `${backendUrl}/jobs//addJob`,
+      `${backendUrl}/jobs/addJob`,
       {
         ...jobData,
       },
