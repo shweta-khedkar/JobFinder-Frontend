@@ -43,7 +43,7 @@ const Filter = ({
           value={title}
           handleInputChange={(e) => updateTitle(e.target.value)}
         />
-        <span>Enter</span>
+        {/* <span>Enter</span> */}
       </div>
       <div>
         <div className={`${styles.skills_filter}`}>

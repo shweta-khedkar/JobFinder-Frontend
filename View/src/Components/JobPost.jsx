@@ -178,7 +178,7 @@ const JobPost = ({job}) => {
           <div className={`${styles.job_input}`}>
             <label htmlFor="skills">Skills Required</label>
             <div className={`${styles.skills_select}`}>
-              <Input
+              <Input 
                 list="datalistOptions"
                 handleInputChange={handleSkillChange}
                 onKeyDown={handleSkillKeyDown}
@@ -202,7 +202,7 @@ const JobPost = ({job}) => {
                         </span>
                       </span>
                     ))
-                  : "Must Have Skills..."}
+                  : "Skills are Required!"}
               </div>
             </div>
           </div>

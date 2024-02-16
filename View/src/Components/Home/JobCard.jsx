@@ -4,6 +4,10 @@ import { FaLocationDot } from "react-icons/fa6";
 import { RiTeamFill } from "react-icons/ri";
 import { MdCurrencyRupee } from "react-icons/md";
 import styles from "./JobCard.module.scss"
+import favicon from "/Favicon.png"
+import { DeleteJobPost } from '../../APIs/JobApi';
+import Button from '../Form/Button';
+
 const JobCard = ({
     logoUrl = "",
     title,
@@ -17,12 +21,15 @@ const JobCard = ({
     recruiter,
     jobId,
     user,
+
   }) => {
+    
+    
   return (
     <div className={`${styles.job_card}`}>
     <section className={`${styles.job_info}`}>
       <div className={`${styles.company_logo}`}>
-        {logoUrl ? <img src={logoUrl} alt="logo" /> : <div>logo</div>}
+        {logoUrl ? <img src={logoUrl} alt="logo here" /> : <img className={`${styles.logoimg}`} src={favicon}></img>}
       </div>
       <div>
         <h3>{title}</h3>
@@ -45,7 +52,23 @@ const JobCard = ({
         {skillsLeft ? <span>+{skillsLeft} more</span> : null}
       </div>
       <div className={`${styles.job_buttons}`}>
+      {user.id === recruiter && (
+          
+          <Link
+            onClick={()=>{
+              DeleteJobPost(jobId);
+            }}
+            style={{
+              color: "var(--dark-pink)",
+              border: "2px solid var(--dark-pink)",
+              padding: "0.3rem 1.5rem",
+            }}
+          >
+           Delete Job
+          </Link>
+        )}
         {user.id === recruiter && (
+          
           <Link
             to={`/job/edit/${jobId}`}
             style={{
@@ -54,14 +77,14 @@ const JobCard = ({
               padding: "0.3rem 1.5rem",
             }}
           >
-            Edit job
+            Edit Job
           </Link>
         )}
         <Link
           to={`/job/view/${jobId}`}
           style={{ color: "#FFF", backgroundColor: "var(--dark-pink)" }}
         >
-          View details
+          View Details
         </Link>
       </div>
     </section>

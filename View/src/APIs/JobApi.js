@@ -82,3 +82,21 @@ export const updateJobPost = async (jobData, jobId) => {
     return { data: null, error: "Something went wrong!" };
   }
 };
+
+export const DeleteJobPost = async (jobId) => {
+  const accessToken = localStorage.getItem("accessToken");
+  try {
+    await axios.delete(`${backendUrl}/jobs/deleteJob/${jobId}`, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    return { error: "" };
+  } catch (error) {
+    return {
+      data: null,
+      error: error?.response?.data?.message || "Something went wrong!",
+    };
+  }
+};

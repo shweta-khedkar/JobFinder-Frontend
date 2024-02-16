@@ -26,7 +26,7 @@ const UpdateJob = () => {
   return (
     job ? 
     <div>
-        <FormWrap posterHeading='Recruiter add job details here' poster={"BannerImg2.png"}>
+        <FormWrap posterHeading='Recruiter Update Job Details Here' poster={"BannerImg2.png"}>
             <JobPost job={job} />
         </FormWrap>
     </div> : <></>

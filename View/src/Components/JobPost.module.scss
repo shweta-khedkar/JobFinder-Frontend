@@ -23,12 +23,15 @@
                 width: 65%;
                 padding: 0.5rem;
                 font-weight: 500;
-                
                 &::placeholder {
                     color: #ADADAD;
                 }
+                
             }
-
+            .skills_select>input{
+                border: none;
+            }
+            
             label {
                 font-size: 1.4rem;
                 font-weight: 500;
