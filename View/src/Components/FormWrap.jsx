@@ -9,7 +9,7 @@ const FormWrap = ({children, posterHeading="", poster, posterCustomStyle={}}) =>
       <section
         className={`${styles.form_poster}`}
         style={{
-          backgroundImage: `url(/src/assets/Images/${poster})`,
+          backgroundImage: `url(/${poster})`,
           ...posterCustomStyle,
         }}
       >
